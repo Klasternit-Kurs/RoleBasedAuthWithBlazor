@@ -12,9 +12,9 @@ namespace BlazorWebAssembly.Server.Controllers
     {
         private static UserModel LoggedOutUser = new UserModel { IsAuthenticated = false };
 
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<DrugiJuzer> _userManager;
 
-        public AccountsController(UserManager<IdentityUser> userManager)
+        public AccountsController(UserManager<DrugiJuzer> userManager)
         {
             _userManager = userManager;
         }
@@ -26,7 +26,7 @@ namespace BlazorWebAssembly.Server.Controllers
             u.UserName = model.Email;
             u.Email = model.Email;
 
-            var newUser = new IdentityUser { UserName = model.Email, Email = model.Email };
+            var newUser = new DrugiJuzer { UserName = model.Email, Email = model.Email, NestoNesto = 101 };
 
             var result = await _userManager.CreateAsync(newUser, model.Password);
 

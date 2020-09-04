@@ -11,6 +11,9 @@ namespace BlazorWebAssembly.Server.Data
         {
         }
 
+        public DbSet<NasJuzer>  NasiJuzeri {get;set;}
+        public DbSet<DrugiJuzer> DrugiJuzers { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

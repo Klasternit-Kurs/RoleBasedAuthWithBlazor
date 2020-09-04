@@ -34,6 +34,12 @@ namespace BlazorWebAssembly.Server
             services.AddDefaultIdentity<IdentityUser>()
                     .AddRoles<IdentityRole>()
                     .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddIdentityCore<NasJuzer>()
+                   .AddRoles<IdentityRole>()
+                   .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddIdentityCore<DrugiJuzer>()
+                   .AddRoles<IdentityRole>()
+                   .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddJwtBearer(options =>
